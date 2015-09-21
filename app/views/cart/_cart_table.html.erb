@@ -1,0 +1,67 @@
+<table class="table cart-table" cellpadding="10">
+
+  <thead>
+    <tr>
+      <th scope="col" id="thumbnail"></th>
+      <th scope="col" id="itemName"><span class="left"></span></th>
+      <th scope="col" id="price">Price</th>
+      <th scope="col" id="quantity">Quantity</th>
+      <th scope="col" id="total">Total</th>
+      <th scope="col" id="remove"></th>
+    </tr>
+  </thead>
+
+  <tfoot>
+    <tr>
+      <td colspan="6" class="total-price text-right">
+        <span class="cost-before-shipping">Cost before shipping</span>
+        <span>
+          =&nbsp;
+          <strong><%= number_to_currency current_order.price %></strong>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="6" class='text-right checkout-or-continue'>
+        <span><%= link_to 'Continue shopping', root_url %></span>
+        <span class="or"> or </span>
+        <span>
+          <%= link_to_with_icon 'Proceed To Checkout', checkout_path,
+            class: 'btn btn-success' %>
+        </span>
+      </td>
+    </tr>
+  </tfoot>
+
+  <tbody>
+    <% @cart_line_items.each do |line_item| %>
+      <tr>
+        <td class="thumb" width="70">
+          <%= link_to line_item.product do
+            image_tag(line_item.product.pic_name, width: 60, class: 'img-rounded', alt: line_item.product.name)
+          end %>
+        </td>
+        <td class="cart-item-name left">
+          <%= link_to line_item.product.name, product_path(line_item.product) %>
+        </td>
+        <td>
+          <%= number_to_currency line_item.product.price %>
+        </td>
+        <td>
+          <%= select_tag "quantity", options_for_select(1..9, selected: line_item.quantity),
+                         data: { behaviour:  "cart-quantity-select",
+                                 cart_path:  cart_path,
+                                 product_id: line_item.product.id } %>
+        </td>
+        <td class="item-total">
+          <%= number_to_currency line_item.price %>
+        </td>
+        <td width="60">
+          <%= link_to "Remove", cart_path(product_id: line_item.product.id), method: :delete, title: 'Remove', class: "btn btn-default btn-xs" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table><!-- end shoppingBag-table -->
+

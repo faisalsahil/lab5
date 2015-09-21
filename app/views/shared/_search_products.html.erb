@@ -1,0 +1,10 @@
+<%= form_tag search_path, role: 'form', class: 'form-inline navbar-form', method: :get, authenticity_token: false, enforce_utf8: false do %>
+  <div class="form-group">
+    <label class="sr-only" for="product-search-input">Search</label>
+    <%= text_field_tag 'q', params[:q], class: 'form-control', placeholder: 'Search' %>
+    <button type="submit" class="btn btn-default form-control"><i class="fa fa-search"></i></button>
+    <% if params[:q].present? %>
+      <%= link_to 'x', search_path, class: 'btn btn-default form-control', title: 'Clear' %>
+    <% end %>
+  </div>
+<% end %>

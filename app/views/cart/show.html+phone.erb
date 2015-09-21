@@ -1,0 +1,18 @@
+<div class="row">
+  <h2 class="col-xs-12 page-title">
+    Shopping Bag
+  </h2>
+</div>
+
+<%= render 'cart_table' %>
+
+<div class="row">
+  <div class="col-xs-12">
+    <%= link_to_with_icon 'Proceed To Checkout', checkout_path, class: 'btn btn-success col-xs-12' %>
+    <p class="text-center">
+      or
+      <br>
+      <%= link_to 'Continue shopping', root_url, class: 'btn btn-default col-xs-12' %>
+    </p>
+  </div>
+</div>

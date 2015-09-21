@@ -1,0 +1,21 @@
+<div class="row">
+  <h3 class="col-sm-12">
+
+    <strong>
+      <%=
+          if @category.present?
+            "Showing #{@category.name.pluralize}"
+          end
+      %>
+    </strong>
+
+  </h3>
+</div>
+  <div class="col-md-12 ">
+    <%= render @products %>
+  </div>
+
+
+<div>
+  <%= paginate @products %>
+</div>

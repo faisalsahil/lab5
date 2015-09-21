@@ -1,0 +1,21 @@
+.media{
+  .pull-left{
+    width: 100%;
+  }
+  .media-body{
+    clear: left;
+    padding-top: 20px;
+  }
+}
+
+h4.media-heading{
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.review{
+  border-bottom: 1px solid #ddd;
+  &:last-child{
+    border-bottom-width: 0;
+  }
+}

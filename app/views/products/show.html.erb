@@ -1,0 +1,41 @@
+<div class="row product-show">
+  <div class="col-sm-5 text-center">
+    <div id="slideshow" class="pics">
+      <%= link_to @product, class: 'product-image' do
+        image_tag(@product.pic_name, width: 200, alt: @product.name, class: 'product-image-big img-rounded')
+        end %>
+    </div>
+  </div>
+
+  <div class="col-sm-7">
+    <h2><%= @product.name %></h2>
+    <p class="price"><%= number_to_currency @product.price %></p>
+    <div class="product-description">
+      <%= simple_format @product.description %>
+    </div>
+    <div class="shopping-actions">
+      <%= link_to_with_icon 'Add to Shopping Bag', cart_path(product_id: @product.id), method: :post,
+            class: 'btn btn-success pull-left', icon: 'icon-shopping-cart' %>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row">
+  <section id="reviews-list" class="col-lg-8 col-md-10 col-sm-12 reviews">
+    <h3>Customer Reviews</h3>
+    <%= render @reviews %>
+  </section>
+</div>
+
+<% if user_signed_in? %>
+  <%= render partial: 'reviews/form', locals: { review: @review } %>
+<% else %>
+  <p>
+    Please <%= link_to 'Sign In', new_session_path(:user), class: "inline-action" %> to post a review.
+  </p>
+<% end %>
+

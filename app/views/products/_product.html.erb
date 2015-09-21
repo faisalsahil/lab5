@@ -1,0 +1,8 @@
+<div class="col-md-4  product_box shadow ">
+<%= link_to product_path(product) do %>
+	<%=number_to_currency product.price , class: " btn btn-success btn_price" %>
+  	<%= image_tag(product.pic_name, height: 220, alt: product.name) %>
+      <% end %>
+
+       <span><%= link_to product.name, product_path(product) %></span> 
+</div>

@@ -1,0 +1,26 @@
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <%= link_to 'Shop', root_url, class: 'navbar-brand' %>
+
+      <a class="navbar-brand pull-right" href="/">
+        <i class="fa fa-shopping-cart fa-lg">
+          <b>5</b><!--  Cart Items Count -->
+        </i>
+      </a>
+      <a class="navbar-brand pull-right" href="<%= search_products_path %>">
+        <i class="fa fa-search fa-lg"></i>
+      </a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <%= render 'shared/nav' %>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>

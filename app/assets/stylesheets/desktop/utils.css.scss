@@ -1,0 +1,22 @@
+span.or{padding:0 10px;}
+input[type=file]{
+  line-height: 0.9;
+  color:#444;
+}
+
+// Meta Info blocks
+.meta{
+  color:#888;
+  &.author{
+    font-size: 14px;
+  }
+}
+
+hr{
+  border-top: 1px solid #ccc;
+}
+@media screen and (min-width: 768px){
+  .desktop-text-center{
+    text-align: center;
+  }
+}

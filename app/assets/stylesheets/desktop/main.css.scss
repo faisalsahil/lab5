@@ -1,0 +1,48 @@
+// Layout
+.page-wrap{
+  position: relative;
+  min-height:100%;
+}
+
+.main_yield{
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+// Cart
+
+// Empty Cart
+.cart-empty{
+  padding: 40px 0;
+}
+
+.shopping-actions {
+  padding: 20px 0 20px;
+}
+
+h3.shopping-bag{
+  margin: 0;
+  position: relative;
+  top: 15px;
+}
+
+// Product Show Page
+.product-description{
+  font-size: 18px;
+}
+
+#slideshow.pics{
+  padding:20px;
+  border-radius: 6px;
+  background:#f8f8f8;
+  border:1px solid #f0f0f0;
+  box-shadow: 0px 0px 0px 1px #fff inset;
+}
+
+.product-name{
+  font-weight: bold;
+}
+
+ .search-form{
+  width: 280px;
+ }

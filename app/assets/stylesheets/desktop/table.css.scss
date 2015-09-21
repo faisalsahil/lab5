@@ -1,0 +1,35 @@
+// Generic table fixes
+.table th{
+  font-weight: normal;
+  text-align: left;
+  color: #888;
+  font-size: .9em;
+}
+.table > tbody > tr > td{
+  padding: 12px 8px;
+  img{
+    width: 100px;
+  }
+}
+.table > thead > tr > th {
+  border-bottom: 1px solid #ddd;
+}
+
+
+// Shopping Cart Table specific
+
+td.total-price{
+  background: #f8f8f8;
+  font-size: 1.2em;
+  color:#369;
+}
+
+td.cart-item-name{
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+// Padding for Checkout/Continue block
+.table > tfoot > tr > td.checkout-or-continue {
+  padding: 20px 0;
+}

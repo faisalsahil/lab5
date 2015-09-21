@@ -1,0 +1,26 @@
+.authforms {
+  .column-1{
+    border-right: 1px solid #eee;
+    .form-controls{
+      width: 80%;
+    }
+  }
+  .column-2-reg{
+    padding-top: 180px;
+  }
+}
+
+
+.devise-links{
+  padding-top:60px;
+}
+
+
+label.required{
+  position: relative;
+  abbr{
+    position: absolute;
+    right: -10px;
+    border-bottom-width: 0;
+  }
+}

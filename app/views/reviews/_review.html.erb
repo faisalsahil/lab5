@@ -1,0 +1,16 @@
+<div class="review">
+  <ul class="media-list">
+    <li class="media">
+      <% if review.attachment.present? %>
+        <a class="pull-left" href="#">
+          <%= image_tag review.attachment.url, alt: 'review attachment', class: 'media-object' %>
+        </a>
+      <% end %>
+      <div class="media-body">
+        <h4 class="media-heading"><%= review.headline %></h4>
+        <p class="meta author">By <a href=""><%= review.user.name %></a></p>
+        <%= simple_format(review.content) %>
+      </div>
+    </li>
+  </ul>
+</div>

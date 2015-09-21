@@ -1,0 +1,37 @@
+<div class="cart-table">
+  <% @cart_line_items.each do |line_item| %>
+    <div class="shopping-bag-item">
+      <div class="row">
+        <div class="col-xs-4 shopping-bag-item-image">
+          <%= link_to line_item.product do
+            image_tag(line_item.product.pic_name, alt: line_item.product.name)
+          end %>
+        </div>
+        <div class="col-xs-8 shopping-bag-item-name">
+          <%= link_to line_item.product.name, product_path(line_item.product) %>
+          <br/>
+          <%= number_to_currency line_item.product.price %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 shopping-bag-item-actions">
+          <%= select_tag "quantity", options_for_select(1..9, selected: line_item.quantity), class: "btn btn-default",
+                         data: {  behaviour: "cart-quantity-select",
+                                  cart_path: cart_path,
+                                  product_id: line_item.product.id} %>
+          <span class="cart-subtotal">
+            Sub Total: <%= number_to_currency line_item.price %>
+          </span>
+          <%= link_to "Remove", cart_path(product_id: line_item.product.id), method: :delete, title: 'Remove', class: 'btn btn-default pull-right' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-12 grand-total">
+      Cost before shipping : <span><%= number_to_currency current_order.price %></span>
+    </div>
+  </div>
+</div>

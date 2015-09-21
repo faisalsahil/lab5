@@ -1,0 +1,91 @@
+body {
+    -webkit-animation-delay: 0.1s;
+    -webkit-animation-name: fontfix;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes fontfix {
+    from { opacity: 1; }
+    to   { opacity: 1; }
+}
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+  font-weight: 300;
+}
+
+h2.page-title {
+  font-size: 20px;
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom:10px;
+}
+
+a{color: #000;
+  &:hover{
+    color:#295480;
+  }
+  &:active{
+    color:#1f4165;
+  }
+}
+
+// Shopping bag
+.shopping-bag-item {
+  margin: 10px 0;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  &:last-child {
+    border-bottom-width: 0;
+  }
+}
+.shopping-bag-item-name {
+  font-size: 1.2em;
+}
+.shopping-bag-item-actions {
+  padding: 10px 15px;
+}
+.shopping-bag-item-image img {
+  width: 100%;
+}
+
+.cart-subtotal {
+  color: #666;
+  padding: 0 10px;
+}
+
+.grand-total.grand-total {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  span{
+    font-weight: bold;
+  }
+}
+select {
+  height: 34px;
+}
+
+.shopping-actions {
+  padding: 10px 0 20px;
+}
+
+
+// Cart Icon Badge — Custom
+
+i.fa.fa-shopping-cart.fa-lg{
+  position: relative;
+  b{
+    position: absolute;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    top: -10px;
+    right: -10px;
+    font-size: 14px;
+    background: #bf160f;
+    padding: 1px 5px;
+    border-radius: 100px;
+    color: #fff;
+    box-shadow: -1px -1px 2px #fff;
+  }
+}

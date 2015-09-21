@@ -1,0 +1,9 @@
+<%= render partial: 'shared/search_products', locals: { search_path: search_products_path } %>
+
+<div class="row">
+  <%= render @products %>
+</div>
+
+<div>
+  <%= paginate @products %>
+</div>

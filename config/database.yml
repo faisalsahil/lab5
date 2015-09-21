@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: hello	
+  host: localhost
+  username: postgres
+  password: postgres
+
+test:
+  adapter: postgresql
+  database: hello_test
+  host: localhost
